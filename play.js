@@ -37,7 +37,7 @@ var play = {
 
         this.besttext = this.game.add.text(220, 80, "REKORD: " + BEST, {
             font: "35px Helvetica",
-            fill: "#fff",
+            fill: "#000",
             align: "center"
         });
         this.scoretext.fontWeight = "bold";
@@ -60,15 +60,15 @@ var play = {
 
       if (this.sky.x < -1024) {
         this.sky.x = 1024;
-        this.sky.x -= 0.2;
+        this.sky.x -= 0.4;
       } else {}
-        this.sky.x -=0.2;
+        this.sky.x -=0.4;
 
       if (this.skymirror.x < -1024) {
         this.skymirror.x = 1024;
-        this.skymirror.x -= 0.2;
+        this.skymirror.x -= 0.4;
       } else {}
-        this.skymirror.x -=0.2;
+        this.skymirror.x -=0.4;
 
 
     },

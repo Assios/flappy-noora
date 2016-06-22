@@ -18,7 +18,7 @@ var load = {
 
 
             game.load.image('sky', 'assets/nissen.jpg');
-            game.load.image('skymirror', 'assets/sky_mirror.jpg');
+            game.load.image('skymirror', 'assets/nissen_mirror.jpg');
             game.load.image('nisse', 'assets/noora2.png');
             game.load.image('polkagris', 'assets/polkagris.png');
             game.load.image('polkagris2', 'assets/polkagris2.png');
