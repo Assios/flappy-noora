@@ -1,6 +1,6 @@
 var menu = {
     preload: function() {
-        game.load.spritesheet('soundbtn', 'assets/soundbtn.png', 100, 100);
+        //game.load.spritesheet('soundbtn', 'assets/soundbtn.png', 100, 100);
     },
 
     create: function() {
@@ -21,11 +21,13 @@ var menu = {
         this.recordtext.font = "Helvetica";
         this.recordtext.fontSize = "80px";
 
-        this.button = game.add.button(500, 1000, 'soundbtn', this.toggle, this);
+        /*this.button = game.add.button(500, 1000, 'soundbtn', this.toggle, this);
+
         if (SOUND == 1)
             this.button.frame = 1;
         else
             this.button.frame = 0;
+        */
     },
 
     update: function() {
