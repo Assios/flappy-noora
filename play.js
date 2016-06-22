@@ -33,7 +33,7 @@ var play = {
         this.score = 0;
 
         this.dick = this.game.add.audio("dick");
-        this.dick.volume = 0.6;
+        this.dick.volume = 0.1;
 
         this.m2 = this.game.add.audio('m2');
         this.m3 = this.game.add.audio('m3');
