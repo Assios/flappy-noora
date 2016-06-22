@@ -17,9 +17,9 @@ var load = {
             game.add.text(50, 100, "LOADING...", { font: "80px Arial", fill: "#fff", align: "center" });
 
 
-            game.load.image('sky', 'assets/sky.jpg');
+            game.load.image('sky', 'assets/nissen.jpg');
             game.load.image('skymirror', 'assets/sky_mirror.jpg');
-            game.load.image('nisse', 'assets/nisse.png');
+            game.load.image('nisse', 'assets/noora2.png');
             game.load.image('polkagris', 'assets/polkagris.png');
             game.load.image('polkagris2', 'assets/polkagris2.png');
             game.load.image('menu', 'assets/bakgrunn.jpg');

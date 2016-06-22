@@ -29,16 +29,21 @@ var play = {
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
-        this.scoretext = this.game.add.text(200, 20, "JULEGAVER: 0", {
-            font: "35px Arial",
-            fill: "#ff0000",
+        this.scoretext = this.game.add.text(220, 20, "POENG: 0", {
+            font: "35px Helvetica",
+            fill: "#E4DF01",
             align: "center"
         });
+
         this.besttext = this.game.add.text(220, 80, "REKORD: " + BEST, {
-            font: "35px Arial",
+            font: "35px Helvetica",
             fill: "#fff",
             align: "center"
         });
+        this.scoretext.fontWeight = "bold";
+        this.scoretext.font = "Helvetica";
+        this.besttext.font = "Helvetica"
+
         this.player.body.setSize(420, 420, 25, 25);
         this.player.body.gravity.y = 1600;
         this.timer = this.game.time.events.loop(1800, this.add_p, this);
@@ -100,10 +105,10 @@ var play = {
         this.score += 1;
         if (this.score > BEST) {
             BEST = this.score;
-            document.cookie = 'bestcookie='+BEST+'; expires=Fri, 1 Aug 2020 20:47:11 UTC; path=/';
+            document.cookie = 'bestcookie='+BEST+'; expires=Fri, 1 Aug 2030 20:47:11 UTC; path=/';
         }
 
-        this.scoretext.text = "JULEGAVER: " + this.score;
+        this.scoretext.text = "POENG: " + this.score;
         this.besttext.text = "REKORD: " + BEST
     },
 }
