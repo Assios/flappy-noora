@@ -4,9 +4,9 @@ var play = {
         this.skymirror = game.add.sprite(1024, 0, 'skymirror');
         this.sky.scale.y = 2.0;
         this.skymirror.scale.y = 2.0;
-        this.nisse = this.game.add.audio('nisse');
-        this.nisse.volume = 1.5;
-        this.nisse.play()
+        //this.nisse = this.game.add.audio('nisse');
+        //this.nisse.volume = 1.5;
+        //this.nisse.play()
         this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         this.polkagris = game.add.group();
         this.polkagris.createMultiple(5, 'polkagris');
@@ -86,9 +86,9 @@ var play = {
 
     },
     restart: function() {
-        this.nisse.stop();
-        this.nisse.stop();
-        this.nisse.stop();
+        //this.nisse.stop();
+        //this.nisse.stop();
+        //this.nisse.stop();
         game.state.start('menu')
     },
     add_p: function() {

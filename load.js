@@ -11,7 +11,7 @@ var load = {
             this.scale.pageAlignVertically = true;
             this.scale.setScreenSize(true);
 
-            game.load.audio('nisse', 'assets/nissehistorie.mp3')
+            //game.load.audio('nisse', 'assets/nissehistorie.mp3')
 	        game.stage.backgroundColor = '#ff0000';
 
             this.loadingtext = game.add.text(135, 200, "LASTER...", { font: "80px Arial", fill: "#E4DF01", align: "center" });
