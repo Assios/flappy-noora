@@ -45,7 +45,7 @@ var play = {
             this.m2.volume = 1.2;
             this.m3.volume = 1.0;
             this.m4.volume = 1.2;
-            this.m5.volume = 1.0;
+            this.m5.volume = 0.8;
         }
 
         this.player.animations.play("start");        
