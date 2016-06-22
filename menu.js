@@ -3,6 +3,7 @@ var menu = {
 
     	//read BEST score from cookie
     	BEST = parseInt(this.readCookie("bestcookie"));
+        var timer = 0;
 
 		if (isNaN(BEST))
 			BEST = 0;
@@ -16,6 +17,8 @@ var menu = {
     },
 
     update: function() {
+
+        timer += game.time.elapsed;
 
         if (game.input.activePointer.isDown || game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).isDown) {
             this.game.state.start('play')
@@ -35,3 +38,10 @@ var menu = {
 	    return null;
 	}
 };
+
+var timer = 0;
+var text = //create phaser text here;//
+
+Update functionupdate(){    
+timer += game.time.elapsed; //this is in ms, not seconds.  
+if ( timer >= 1000 )    {        timer -= 1000; text.visible = !text.visible;    }}

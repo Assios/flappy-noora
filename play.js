@@ -22,7 +22,7 @@ var play = {
         this.polkagris2.scale.setTo(1.27, 1.27);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'nisse');
-        this.player.scale.setTo(0.3, 0.3);
+        this.player.scale.setTo(0.4, 0.4);
         game.physics.arcade.enable(this.player);
         game.physics.arcade.enable(this.polkagris);
         game.physics.arcade.enable(this.polkagris2);
