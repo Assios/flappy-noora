@@ -29,19 +29,20 @@ var play = {
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
-        this.scoretext = this.game.add.text(220, 20, "POENG: 0", {
+        this.scoretext = this.game.add.text(230, 20, "POENG: 0", {
             font: "35px Helvetica",
             fill: "#E4DF01",
             align: "center"
         });
 
-        this.besttext = this.game.add.text(220, 80, "REKORD: " + BEST, {
+        this.besttext = this.game.add.text(210, 80, "REKORD: " + BEST, {
             font: "35px Helvetica",
-            fill: "#000",
+            fill: "#E4DF01",
             align: "center"
         });
         this.scoretext.fontWeight = "bold";
         this.scoretext.font = "Helvetica";
+        this.besttext.fontWeight = "bold";
         this.besttext.font = "Helvetica"
 
         this.player.body.setSize(420, 420, 25, 25);

@@ -22,7 +22,7 @@ var load = {
             game.load.image('nisse', 'assets/noora.png');
             game.load.image('polkagris', 'assets/william.png');
             game.load.image('polkagris2', 'assets/william2.png');
-            game.load.image('menu', 'assets/bakgrunn.jpg');
+            game.load.image('menu', 'assets/flappynoora.jpg');
 	},
 
 	create: function() {
