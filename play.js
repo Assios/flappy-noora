@@ -1,7 +1,7 @@
 var play = {
     create: function() {
         this.sky = game.add.sprite(0, 0, 'sky');
-        this.skymirror = game.add.sprite(1000, 0, 'skymirror');
+        this.skymirror = game.add.sprite(900, 0, 'skymirror');
         this.sky.scale.y = 2.0;
         this.skymirror.scale.y = 2.0;
         //this.nisse = this.game.add.audio('nisse');
@@ -49,7 +49,7 @@ var play = {
             this.m10 = this.game.add.audio("jeggiropp")
             this.m11 = this.game.add.audio("russebuss")
 
-            this.m1.volume = 1.2;
+            this.m1.volume = 1.0;
             this.m2.volume = 1.2;
             this.m3.volume = 1.0;
             this.m4.volume = 1.2;
