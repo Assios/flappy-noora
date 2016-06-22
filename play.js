@@ -25,13 +25,14 @@ var play = {
         this.player.scale.setTo(2.2, 2.2);
         this.player.animations.add('jump1', [1, 0], 4, false);
         this.player.animations.add("start", [0], 1, false);
-        this.player.animations.play("start");
-        //this.player.animations.add("jump2", [2, 0], 2, false);
+        this.player.animations.add("jump2", [2, 0, 1, 2, 0, 1, 2, 1, 0, 2, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 1, 0, 2, 1], 5, false);
         game.physics.arcade.enable(this.player);
         game.physics.arcade.enable(this.polkagris);
         game.physics.arcade.enable(this.polkagris2);
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
+
+        this.player.animations.play("start");        
 
         this.scoretext = this.game.add.text(230, 20, "POENG: 0", {
             font: "35px Helvetica",
@@ -77,6 +78,9 @@ var play = {
       } else {}
         this.skymirror.x -=0.4;
 
+        if (this.score%50==0 && this.score != 0) {
+            this.player.animations.play("jump2");
+        }
 
     },
     render: function() {
@@ -85,8 +89,10 @@ var play = {
     jump: function() {
         //var change_expression = Math.floor(Math.random() * 20);
 
+        if (!this.score%50==0 || this.score==0) {
         this.player.animations.stop(null, true);
         this.player.animations.play("jump1");
+        }
 
         this.player.body.velocity.y = -600;
         tweenz = this.game.add.tween(this.player);
