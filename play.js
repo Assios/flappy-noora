@@ -37,15 +37,29 @@ var play = {
             this.dick.loop = true;
             this.dick.volume = 0.2;
 
+            this.m1 = this.game.add.audio("herreguddritkult")
             this.m2 = this.game.add.audio('m2');
             this.m3 = this.game.add.audio('m3');
             this.m4 = this.game.add.audio('m4');
             this.m5 = this.game.add.audio('m5');
+            this.m6 = this.game.add.audio("nooraokey")
+            this.m7 = this.game.add.audio("harderenomat");
+            this.m8 = this.game.add.audio("iloveyou")
+            this.m9 = this.game.add.audio("javel")
+            this.m10 = this.game.add.audio("jeggiropp")
+            this.m11 = this.game.add.audio("russebuss")
 
+            this.m1.volume = 1.2;
             this.m2.volume = 1.2;
             this.m3.volume = 1.0;
             this.m4.volume = 1.2;
             this.m5.volume = 0.6;
+            this.m6.volume = 1.3;
+            this.m7.volume = 1.3;
+            this.m8.volume = 1.3;
+            this.m9.volume = 1.4;
+            this.m10.volume = 1.4;
+            this.m11.volume = 1.4;
         }
 
         this.player.animations.play("start");        
@@ -153,18 +167,39 @@ var play = {
         this.besttext.text = "REKORD: " + BEST
     },
     randomSound: function() {
-        switch(Math.floor((Math.random() * 4) + 1)) {
+        switch(Math.floor((Math.random() * 11) + 1)) {
             case 1:
-                this.m2.play();
+                this.m1.play();
                 break;
             case 2:
-                this.m3.play();
+                this.m2.play();
                 break;
             case 3:
-                this.m4.play();
+                this.m3.play();
                 break;
             case 4:
+                this.m4.play();
+                break;
+            case 5:
                 this.m5.play();
+                break;
+            case 6:
+                this.m6.play();
+                break;
+            case 7:
+                this.m7.play();
+                break;
+            case 8:
+                this.m8.play();
+                break;
+            case 9:
+                this.m9.play();
+                break;
+            case 10:
+                this.m10.play();
+                break;
+            case 11:
+                this.m11.play();
                 break;
         }
     }
