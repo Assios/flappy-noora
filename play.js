@@ -32,7 +32,8 @@ var play = {
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
-        this.m1 = this.game.add.audio('m1');
+        this.dick = this.game.add.audio("dick");
+
         this.m2 = this.game.add.audio('m2');
         this.m3 = this.game.add.audio('m3');
         this.m4 = this.game.add.audio('m4');
@@ -63,6 +64,8 @@ var play = {
         this.randomS = this.game.time.events.loop(9000, this.randomSound, this);
 
         //this.animations = ["jump1", "jump2", "jump1", "jump2"];
+
+        this.dick.play();
 
     },
     update: function() {
@@ -110,10 +113,11 @@ var play = {
 
     },
     restart: function() {
-        //this.nisse.stop();
-        //this.nisse.stop();
-        //this.nisse.stop();
-        game.state.start('menu')
+        this.dick.stop();
+        this.dick.stop();
+        this.dick.stop();
+        game.state.start('menu');
+
     },
     add_p: function() {
         var power = this.polkagris.getFirstDead();
@@ -139,18 +143,15 @@ var play = {
     randomSound: function() {
         switch(Math.floor((Math.random() * 10) + 1)) {
             case 1:
-                this.m1.play();
-                break;
-            case 2:
                 this.m2.play();
                 break;
-            case 3:
+            case 2:
                 this.m3.play();
                 break;
-            case 4:
+            case 3:
                 this.m4.play();
                 break;
-            case 5:
+            case 4:
                 this.m5.play();
                 break;
         }
