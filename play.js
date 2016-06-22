@@ -21,11 +21,12 @@ var play = {
         this.polkagris2.enableBody = true;
         this.polkagris2.scale.setTo(1.27, 1.27);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        //this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'nisse');
         this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'bird');
-        this.player.scale.setTo(2.0, 2.0);
-        this.player.animations.add('go', [0, 1, 2], 10, true);
-        this.player.animations.play('go');
+        this.player.scale.setTo(2.2, 2.2);
+        this.player.animations.add('jump1', [1, 0], 2, false);
+        this.player.animations.add("start", [0], 1, false);
+        this.player.animations.play("start");
+        //this.player.animations.add("jump2", [2, 0], 2, false);
         game.physics.arcade.enable(this.player);
         game.physics.arcade.enable(this.polkagris);
         game.physics.arcade.enable(this.polkagris2);
@@ -48,10 +49,12 @@ var play = {
         this.besttext.fontWeight = "bold";
         this.besttext.font = "Helvetica"
 
-        this.player.body.setSize(32, 34, 25, 25);
+        this.player.body.setSize(32, 80, 25, 25);
         this.player.body.gravity.y = 1600;
         this.timer = this.game.time.events.loop(1800, this.add_p, this);
         this.game.time.events.loop(1800, this.updateScore, this);
+
+        //this.animations = ["jump1", "jump2", "jump1", "jump2"];
 
     },
     update: function() {
@@ -80,6 +83,12 @@ var play = {
         game.debug.body(this.polkagris)
     },
     jump: function() {
+        var change_expression = Math.floor(Math.random() * 20);
+
+        if (change_expression < 4) {
+            this.player.animations.play("jump1");
+        }
+
         this.player.body.velocity.y = -600;
         tweenz = this.game.add.tween(this.player);
         tweenz.to({
