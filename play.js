@@ -45,7 +45,7 @@ var play = {
             this.m2.volume = 1.2;
             this.m3.volume = 1.0;
             this.m4.volume = 1.2;
-            this.m5.volume = 1.2;
+            this.m5.volume = 1.0;
         }
 
         this.player.animations.play("start");        
@@ -153,7 +153,7 @@ var play = {
         this.besttext.text = "REKORD: " + BEST
     },
     randomSound: function() {
-        switch(Math.floor((Math.random() * 10) + 1)) {
+        switch(Math.floor((Math.random() * 4) + 1)) {
             case 1:
                 this.m2.play();
                 break;
