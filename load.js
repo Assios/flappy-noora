@@ -26,6 +26,8 @@ var load = {
             game.load.image('polkagris', 'assets/william.png');
             game.load.image('polkagris2', 'assets/william2.png');
             game.load.image('menu', 'assets/flappynoora.jpg');
+            game.load.spritesheet('bird', 'assets/spritesheet.png', 72, 64);
+
 	},
 
 	create: function() {
