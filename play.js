@@ -109,6 +109,8 @@ var play = {
         }, 100);
         tweenz.start();
 
+        this.randomSound();
+
     },
     restart: function() {
         //this.nisse.stop();

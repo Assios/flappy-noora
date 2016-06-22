@@ -27,11 +27,11 @@ var load = {
             game.load.image('menu', 'assets/flappynoora.jpg');
             game.load.spritesheet('bird', 'assets/spritesheet.png', 72, 64);
 
-        game.load.audio('m1', 'assets/quotes/s1.mp3');
-        game.load.audio('m2', 'assets/quotes/s2.mp3');
-        game.load.audio('m3', 'assets/quotes/s3.mp3');
-        game.load.audio('m4', 'assets/quotes/s4.mp3');
-        game.load.audio('m5', 'assets/quotes/s5.mp3');
+        game.load.audio('m1', 'assets/s1.mp3');
+        game.load.audio('m2', 'assets/s2.mp3');
+        game.load.audio('m3', 'assets/s3.mp3');
+        game.load.audio('m4', 'assets/s4.mp3');
+        game.load.audio('m5', 'assets/s5.mp3');
 	},
 
 	create: function() {
