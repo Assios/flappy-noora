@@ -88,9 +88,6 @@ var play = {
             this.player.animations.play("jump2");
         }
 
-        if (this.score%7==0)
-            this.randomSound();
-
     },
     render: function() {
         game.debug.body(this.polkagris)
@@ -134,6 +131,9 @@ var play = {
             BEST = this.score;
             document.cookie = 'bestcookie='+BEST+'; expires=Fri, 1 Aug 2030 20:47:11 UTC; path=/';
         }
+
+        if (this.score%7 == 0)
+            this.randomSound();
 
         this.scoretext.text = "POENG: " + this.score;
         this.besttext.text = "REKORD: " + BEST
