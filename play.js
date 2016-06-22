@@ -33,11 +33,17 @@ var play = {
         this.score = 0;
 
         this.dick = this.game.add.audio("dick");
+        this.dick.volume = 0.6;
 
         this.m2 = this.game.add.audio('m2');
         this.m3 = this.game.add.audio('m3');
         this.m4 = this.game.add.audio('m4');
         this.m5 = this.game.add.audio('m5');
+
+        this.m2.volume = 1.5;
+        this.m3.volume = 1.5;
+        this.m4.volume = 1.5;
+        this.m5.volume = 1.5;
 
         this.player.animations.play("start");        
 
