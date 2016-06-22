@@ -60,6 +60,7 @@ var play = {
         this.player.body.gravity.y = 1600;
         this.timer = this.game.time.events.loop(1800, this.add_p, this);
         this.game.time.events.loop(1800, this.updateScore, this);
+        this.randomS = this.game.time.events.loop(2000, this.randomSound, this);
 
         //this.animations = ["jump1", "jump2", "jump1", "jump2"];
 
@@ -131,9 +132,6 @@ var play = {
             BEST = this.score;
             document.cookie = 'bestcookie='+BEST+'; expires=Fri, 1 Aug 2030 20:47:11 UTC; path=/';
         }
-
-        if (this.score%7 == 0)
-            this.randomSound();
 
         this.scoretext.text = "POENG: " + this.score;
         this.besttext.text = "REKORD: " + BEST
