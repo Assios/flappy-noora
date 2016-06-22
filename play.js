@@ -32,18 +32,20 @@ var play = {
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
-        this.dick = this.game.add.audio("dick");
-        this.dick.volume = 0.1;
+        if (SOUND) {
+            this.dick = this.game.add.audio("dick");
+            this.dick.volume = 0.1;
 
-        this.m2 = this.game.add.audio('m2');
-        this.m3 = this.game.add.audio('m3');
-        this.m4 = this.game.add.audio('m4');
-        this.m5 = this.game.add.audio('m5');
+            this.m2 = this.game.add.audio('m2');
+            this.m3 = this.game.add.audio('m3');
+            this.m4 = this.game.add.audio('m4');
+            this.m5 = this.game.add.audio('m5');
 
-        this.m2.volume = 1.5;
-        this.m3.volume = 1.5;
-        this.m4.volume = 1.5;
-        this.m5.volume = 1.5;
+            this.m2.volume = 1.2;
+            this.m3.volume = 1.2;
+            this.m4.volume = 1.2;
+            this.m5.volume = 1.2;
+        }
 
         this.player.animations.play("start");        
 
@@ -67,11 +69,14 @@ var play = {
         this.player.body.gravity.y = 1600;
         this.timer = this.game.time.events.loop(1800, this.add_p, this);
         this.game.time.events.loop(1800, this.updateScore, this);
-        this.randomS = this.game.time.events.loop(9000, this.randomSound, this);
+        if (SOUND) {
+            this.randomS = this.game.time.events.loop(9000, this.randomSound, this);
+        }
 
         //this.animations = ["jump1", "jump2", "jump1", "jump2"];
-
-        this.dick.play();
+        if (SOUND) {
+            this.dick.play();
+        }
 
     },
     update: function() {

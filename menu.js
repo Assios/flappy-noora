@@ -1,4 +1,8 @@
 var menu = {
+    preload: function() {
+        game.load.spritesheet('soundbtn', 'assets/soundbtn.png', 100, 100);
+    },
+
     create: function() {
 
     	//read BEST score from cookie
@@ -16,6 +20,12 @@ var menu = {
         this.recordtext.fontWeight = "bold";
         this.recordtext.font = "Helvetica";
         this.recordtext.fontSize = "80px";
+
+        this.button = game.add.button(500, 1000, 'soundbtn', this.toggle, this);
+        if (SOUND == 1)
+            this.button.frame = 1;
+        else
+            this.button.frame = 0;
     },
 
     update: function() {
@@ -36,5 +46,17 @@ var menu = {
 	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
 	    }
 	    return null;
-	}
+	},
+
+    toggle: function() {
+        
+        if (this.button.frame == 0) {
+            this.button.frame = 1;
+            SOUND = 1;
+        }
+        else {
+            this.button.frame = 0;
+            SOUND = 0;
+        }
+    },
 };
