@@ -23,7 +23,7 @@ var play = {
         game.physics.startSystem(Phaser.Physics.ARCADE);
         this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'bird');
         this.player.scale.setTo(2.2, 2.2);
-        this.player.animations.add('jump1', [1, 0], 2, false);
+        this.player.animations.add('jump1', [1, 0], 4, false);
         this.player.animations.add("start", [0], 1, false);
         this.player.animations.play("start");
         //this.player.animations.add("jump2", [2, 0], 2, false);
