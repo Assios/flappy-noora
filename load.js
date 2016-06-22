@@ -14,8 +14,11 @@ var load = {
             game.load.audio('nisse', 'assets/nissehistorie.mp3')
 	        game.stage.backgroundColor = '#ff0000';
 
-            game.add.text(50, 100, "LOADING...", { font: "80px Arial", fill: "#fff", align: "center" });
+            this.loadingtext = game.add.text(135, 200, "LASTER...", { font: "80px Arial", fill: "#E4DF01", align: "center" });
 
+            this.loadingtext.fontWeight = "bold";
+            this.loadingtext.font = "Helvetica";
+            this.loadingtext.fontSize = "80px";
 
             game.load.image('sky', 'assets/nissen.jpg');
             game.load.image('skymirror', 'assets/nissen_mirror.jpg');
