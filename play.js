@@ -85,6 +85,7 @@ var play = {
     jump: function() {
         //var change_expression = Math.floor(Math.random() * 20);
 
+        this.player.animations.stop(null, true);
         this.player.animations.play("jump1");
 
         this.player.body.velocity.y = -600;
