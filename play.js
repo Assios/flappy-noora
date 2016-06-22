@@ -83,11 +83,9 @@ var play = {
         game.debug.body(this.polkagris)
     },
     jump: function() {
-        var change_expression = Math.floor(Math.random() * 20);
+        //var change_expression = Math.floor(Math.random() * 20);
 
-        if (change_expression < 4) {
-            this.player.animations.play("jump1");
-        }
+        this.player.animations.play("jump1");
 
         this.player.body.velocity.y = -600;
         tweenz = this.game.add.tween(this.player);
