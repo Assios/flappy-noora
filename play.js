@@ -32,6 +32,12 @@ var play = {
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
+        this.m1 = this.game.add.audio('m1');
+        this.m2 = this.game.add.audio('m2');
+        this.m3 = this.game.add.audio('m3');
+        this.m4 = this.game.add.audio('m4');
+        this.m5 = this.game.add.audio('m5');
+
         this.player.animations.play("start");        
 
         this.scoretext = this.game.add.text(230, 20, "POENG: 0", {
@@ -54,6 +60,8 @@ var play = {
         this.player.body.gravity.y = 1600;
         this.timer = this.game.time.events.loop(1800, this.add_p, this);
         this.game.time.events.loop(1800, this.updateScore, this);
+
+        this.game.time.events.loop(5000, this.randomSound, this);
 
         //this.animations = ["jump1", "jump2", "jump1", "jump2"];
 
@@ -129,4 +137,24 @@ var play = {
         this.scoretext.text = "POENG: " + this.score;
         this.besttext.text = "REKORD: " + BEST
     },
+    randomSound: function() {
+        switch(Math.floor((Math.random() * 10) + 1)) {
+            case 1:
+                this.m1.play();
+                break;
+            case 2:
+                this.m2.play();
+                break;
+            case 3:
+                this.m3.play();
+                break;
+            case 4:
+                this.m4.play();
+                break;
+            case 5:
+                this.m5.play();
+                break;
+        }
+    }
+
 }
