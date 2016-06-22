@@ -35,7 +35,7 @@ var play = {
         if (SOUND) {
             this.dick = this.game.add.audio("dick");
             this.dick.loop = true;
-            this.dick.volume = 0.1;
+            this.dick.volume = 0.2;
 
             this.m2 = this.game.add.audio('m2');
             this.m3 = this.game.add.audio('m3');
