@@ -71,7 +71,7 @@ var play = {
         this.timer = this.game.time.events.loop(1800, this.add_p, this);
         this.game.time.events.loop(1800, this.updateScore, this);
         if (SOUND) {
-            this.randomS = this.game.time.events.loop(9000, this.randomSound, this);
+            this.randomS = this.game.time.events.loop(10000, this.randomSound, this);
         }
 
         //this.animations = ["jump1", "jump2", "jump1", "jump2"];
