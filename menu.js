@@ -21,6 +21,17 @@ var menu = {
         this.recordtext.font = "Helvetica";
         this.recordtext.fontSize = "80px";
 
+        this.hashtagtext = this.game.add.text(80, 600, "#flappynoora", {
+            fill: "#fff900",
+            align: "center"
+        });
+
+        this.hashtagtext.fontWeight = "bold";
+        this.hashtagtext.font = "Helvetica";
+        this.hashtagtext.fontSize = "30px";
+        this.hashtagtext.angle = "-30"
+
+
         /*this.button = game.add.button(500, 1000, 'soundbtn', this.toggle, this);
 
         if (SOUND == 1)
