@@ -159,8 +159,14 @@ var play = {
         var random = Math.floor(Math.random() * 400) - 200;
         power.reset(W, -275 + random);
         power2.reset(W, 550 + random);
-        power.body.velocity.x = -250;
-        power2.body.velocity.x = -250
+
+        if (this.score > 10) {
+            power.body.velocity.x = -400;
+            power2.body.velocity.x = -400;
+        } else {
+            power.body.velocity.x = -250;
+            power2.body.velocity.x = -250;
+        }
     },
     updateScore: function() {
         this.score += 1;
