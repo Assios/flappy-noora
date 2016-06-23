@@ -12,7 +12,7 @@ var menu = {
 			BEST = 0;
 
         this.bgsky = game.add.sprite(0, 0, 'menu');
-        this.recordtext = this.game.add.text(90, H-100, "REKORD: " + BEST, {
+        this.recordtext = this.game.add.text(90, H-125, "REKORD: " + BEST, {
             fontSize: "100px",
             fill: "#fff900",
             align: "center"
