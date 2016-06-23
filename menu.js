@@ -55,7 +55,6 @@ var menu = {
     update: function() {
 
         if (game.input.activePointer.isDown || game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR).isDown) {
-            this.game.sound.stopAll();
             this.game.state.start('play')
         }
     },
