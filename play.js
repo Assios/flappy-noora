@@ -70,6 +70,7 @@ var play = {
             this.d1 = this.game.add.audio("dutrengerpikknoora")
             this.d2 = this.game.add.audio("erduserr")
             this.d3 = this.game.add.audio("omg")
+            this.d4 = this.game.add.audio("nooramedtooer")
 
         }
 
@@ -181,7 +182,7 @@ var play = {
         this.besttext.text = "REKORD: " + BEST
     },
     randomDeathSound: function() {
-        switch(Math.floor((Math.random() * 3) + 1)) {
+        switch(Math.floor((Math.random() * 4) + 1)) {
             case 1:
                 this.d1.play();
                 break;
@@ -189,6 +190,9 @@ var play = {
                 this.d2.play();
                 break;
             case 3:
+                this.d3.play();
+                break;
+            case 4:
                 this.d3.play();
                 break;
         }

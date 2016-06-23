@@ -40,6 +40,7 @@ var load = {
         game.load.audio("dutrengerpikknoora", "assets/quotes/dutrengerpikknoora.mp3")
         game.load.audio("erduserr", "assets/erduserr.mp3")
         game.load.audio("omg", "assets/omg.mp3")
+        game.load.audio("nooramedtooer", "assets/nooramedtooer.mp3")
 
         game.load.audio('m2', 'assets/quotes/s2.mp3');
         game.load.audio('m3', 'assets/quotes/s3.mp3');
