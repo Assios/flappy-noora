@@ -193,7 +193,7 @@ var play = {
                 this.d3.play();
                 break;
             case 4:
-                this.d3.play();
+                this.d4.play();
                 break;
         }
     },
