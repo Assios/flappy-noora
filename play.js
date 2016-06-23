@@ -48,6 +48,9 @@ var play = {
             this.m9 = this.game.add.audio("javel")
             this.m10 = this.game.add.audio("jeggiropp")
             this.m11 = this.game.add.audio("russebuss")
+            this.m12 = this.game.add.audio("lagenoaent")
+            this.m13 = this.game.add.audio("ikkenoespise")
+
 
 
             this.m1.volume = 1.0;
@@ -61,8 +64,12 @@ var play = {
             this.m9.volume = 1.4;
             this.m10.volume = 1.4;
             this.m11.volume = 1.4;
+            this.m12.volume = 0.8;
+            this.m13.volume = 1.0;
 
-            this.pikk = this.game.add.audio("dutrengerpikknoora")
+            this.d1 = this.game.add.audio("dutrengerpikknoora")
+            this.d2 = this.game.add.audio("erduserr")
+            this.d3 = this.game.add.audio("omg")
 
         }
 
@@ -148,7 +155,7 @@ var play = {
         this.dick.stop();
         this.game.sound.stopAll();
         LAST = this.score;
-        //this.pikk.play();
+        this.randomDeathSound();
         game.state.start('menu');
 
     },
@@ -173,8 +180,21 @@ var play = {
         this.scoretext.text = "POENG: " + this.score;
         this.besttext.text = "REKORD: " + BEST
     },
+    randomDeathSound: function() {
+        switch(Math.floor((Math.random() * 3) + 1)) {
+            case 1:
+                this.d1.play();
+                break;
+            case 2:
+                this.d2.play();
+                break;
+            case 3:
+                this.d3.play();
+                break;
+        }
+    },
     randomSound: function() {
-        switch(Math.floor((Math.random() * 11) + 1)) {
+        switch(Math.floor((Math.random() * 13) + 1)) {
             case 1:
                 this.m1.play();
                 break;
@@ -207,6 +227,12 @@ var play = {
                 break;
             case 11:
                 this.m11.play();
+                break;
+            case 12:
+                this.m12.play();
+                break;
+            case 13:
+                this.m13.play();
                 break;
         }
     }

@@ -34,8 +34,12 @@ var load = {
         game.load.audio("russebuss", "assets/quotes/russebuss.mp3")
         game.load.audio("harderenomat", "assets/quotes/harderenomat.mp3")
         game.load.audio("jeggiropp", "assets/quotes/jeggiropp.mp3")
-        game.load.audio("dutrengerpikknoora", "assets/quotes/dutrengerpikknoora.mp3")
+        game.load.audio("lagenoaent", "assets/quotes/lagenoaent.mp3")
+        game.load.audio("ikkenoespise", "assets/quotes/ikkenoespise.mp3")
 
+        game.load.audio("dutrengerpikknoora", "assets/quotes/dutrengerpikknoora.mp3")
+        game.load.audio("erduserr", "assets/erduserr.mp3")
+        game.load.audio("omg", "assets/omg.mp3")
 
         game.load.audio('m2', 'assets/quotes/s2.mp3');
         game.load.audio('m3', 'assets/quotes/s3.mp3');
