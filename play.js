@@ -62,6 +62,9 @@ var play = {
             this.m10.volume = 1.4;
             this.m11.volume = 1.4;
 
+            var quotes = [this.m1, this.m2, this.m3, this.m4, this.m5, this.m6, this.m7, this.m8, this.m9, this.m10, this.m11];
+
+
             this.pikk = this.game.add.audio("dutrengerpikknoora")
 
         }
@@ -172,40 +175,8 @@ var play = {
         this.besttext.text = "REKORD: " + BEST
     },
     randomSound: function() {
-        switch(Math.floor((Math.random() * 11) + 1)) {
-            case 1:
-                this.m1.play();
-                break;
-            case 2:
-                this.m2.play();
-                break;
-            case 3:
-                this.m3.play();
-                break;
-            case 4:
-                this.m4.play();
-                break;
-            case 5:
-                this.m5.play();
-                break;
-            case 6:
-                this.m6.play();
-                break;
-            case 7:
-                this.m7.play();
-                break;
-            case 8:
-                this.m8.play();
-                break;
-            case 9:
-                this.m9.play();
-                break;
-            case 10:
-                this.m10.play();
-                break;
-            case 11:
-                this.m11.play();
-                break;
+            ind = Math.floor((Math.random() * 11) + 1);
+            quotes[ind].play();
         }
     }
 
