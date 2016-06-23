@@ -49,6 +49,7 @@ var play = {
             this.m10 = this.game.add.audio("jeggiropp")
             this.m11 = this.game.add.audio("russebuss")
 
+
             this.m1.volume = 1.0;
             this.m2.volume = 1.2;
             this.m3.volume = 1.0;
@@ -60,6 +61,9 @@ var play = {
             this.m9.volume = 1.4;
             this.m10.volume = 1.4;
             this.m11.volume = 1.4;
+
+            this.pikk = this.game.add.audio("dutrengerpikknoora")
+
         }
 
         this.player.animations.play("start");        
@@ -142,6 +146,7 @@ var play = {
         this.dick.stop();
         this.dick.stop();
         this.dick.stop();
+        this.pikk.play();
         game.state.start('menu');
 
     },
