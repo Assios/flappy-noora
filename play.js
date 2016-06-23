@@ -147,7 +147,8 @@ var play = {
         this.dick.stop();
         this.dick.stop();
         this.game.sound.stopAll();
-        this.pikk.play();
+        LAST = this.score;
+        //this.pikk.play();
         game.state.start('menu');
 
     },

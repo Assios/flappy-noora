@@ -12,7 +12,7 @@ var menu = {
 			BEST = 0;
 
         this.bgsky = game.add.sprite(0, 0, 'menu');
-        this.recordtext = this.game.add.text(80, H-200, "REKORD: " + BEST, {
+        this.recordtext = this.game.add.text(90, H-100, "REKORD: " + BEST, {
             fontSize: "100px",
             fill: "#fff900",
             align: "center"
@@ -20,6 +20,17 @@ var menu = {
         this.recordtext.fontWeight = "bold";
         this.recordtext.font = "Helvetica";
         this.recordtext.fontSize = "80px";
+
+        if (LAST) {
+            this.lasttext = this.game.add.text(110, H-200, "DU FIKK " + LAST + " POENG", {
+                fill: "#fff900",
+                align: "center"
+            });
+        }
+
+        this.lasttext.fontWeight = "bold";
+        this.lasttext.font = "Helvetica";
+        this.lasttext.fontSize = "50px";
 
         this.hashtagtext = this.game.add.text(80, 600, "#flappynoora", {
             fill: "#fff900",
