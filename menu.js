@@ -26,11 +26,11 @@ var menu = {
                 fill: "#fff900",
                 align: "center"
             });
-        }
 
-        this.lasttext.fontWeight = "bold";
-        this.lasttext.font = "Helvetica";
-        this.lasttext.fontSize = "50px";
+            this.lasttext.fontWeight = "bold";
+            this.lasttext.font = "Helvetica";
+            this.lasttext.fontSize = "50px";
+        }
 
         this.hashtagtext = this.game.add.text(80, 600, "#flappynoora", {
             fill: "#fff900",
