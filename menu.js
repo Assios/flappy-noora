@@ -44,7 +44,7 @@ var menu = {
         this.hashtagtext.fontSize = "30px";
         this.hashtagtext.angle = "-30"
 
-        this.instagramtext = this.game.add.text(122, 353, "@flappynoora", {
+        this.instagramtext = this.game.add.text(122, 351, "@flappynoora", {
             fill: "#fff",
             align: "center"
         });
