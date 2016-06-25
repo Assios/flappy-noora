@@ -20,7 +20,7 @@ var load = {
             this.loadingtext.font = "Helvetica";
             this.loadingtext.fontSize = "80px";
 
-            game.load.image('sky', 'assets/club.jpg');
+            game.load.image('sky', 'club.jpg');
             game.load.image('skymirror', 'assets/nissen_mirror.jpg');
             game.load.image('polkagris', 'assets/nico.png');
             game.load.image('polkagris2', 'assets/nico2.png');

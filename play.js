@@ -130,6 +130,7 @@ var play = {
             this.player.animations.play("jump2");
         }
 
+
     },
     render: function() {
         game.debug.body(this.polkagris)
@@ -169,7 +170,16 @@ var play = {
         power.reset(W, -275 + random);
         power2.reset(W, 550 + random);
         power.body.velocity.x = -250;
-        power2.body.velocity.x = -250
+        power2.body.velocity.x = -250;
+
+        if ((Math.floor(Math.random() * 2) + 1) == 1)
+            rr = 50;
+        else
+            rr = -50;
+        power.body.velocity.y = rr;
+        power2.body.velocity.y = rr;
+
+
     },
     updateScore: function() {
         this.score += 1;
