@@ -20,10 +20,10 @@ var load = {
             this.loadingtext.font = "Helvetica";
             this.loadingtext.fontSize = "80px";
 
-            game.load.image('sky', 'assets/nissen.jpg');
+            game.load.image('sky', 'club.jpg');
             game.load.image('skymirror', 'assets/nissen_mirror.jpg');
-            game.load.image('polkagris', 'assets/william.png');
-            game.load.image('polkagris2', 'assets/william2.png');
+            game.load.image('polkagris', 'assets/nico.png');
+            game.load.image('polkagris2', 'assets/nico2.png');
             game.load.image('menu', 'assets/flappynoora.jpg');
             game.load.spritesheet('bird', 'assets/spritesheet.png', 72, 64);
 
