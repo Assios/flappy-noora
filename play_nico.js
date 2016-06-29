@@ -53,19 +53,19 @@ var play_nico = {
 
 
 
-            this.m1.volume = 1.0;
-            this.m2.volume = 1.2;
-            this.m3.volume = 1.0;
-            this.m4.volume = 1.2;
-            this.m5.volume = 0.6;
-            this.m6.volume = 1.3;
-            this.m7.volume = 1.3;
-            this.m8.volume = 1.3;
-            this.m9.volume = 1.4;
-            this.m10.volume = 1.4;
-            this.m11.volume = 1.4;
-            this.m12.volume = 0.8;
-            this.m13.volume = 1.0;
+            this.m1.volume = 1.2;
+            this.m2.volume = 1.4;
+            this.m3.volume = 1.2;
+            this.m4.volume = 1.4;
+            this.m5.volume = 0.8;
+            this.m6.volume = 1.5;
+            this.m7.volume = 1.5;
+            this.m8.volume = 1.5;
+            this.m9.volume = 1.5;
+            this.m10.volume = 1.5;
+            this.m11.volume = 1.6;
+            this.m12.volume = 1.0;
+            this.m13.volume = 1.2;
 
             this.d1 = this.game.add.audio("dutrengerpikknoora")
             this.d2 = this.game.add.audio("erduserr")
