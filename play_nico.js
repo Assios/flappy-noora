@@ -33,9 +33,9 @@ var play_nico = {
         this.score = 0;
 
         if (SOUND) {
-            this.dick = this.game.add.audio("dick");
+            this.dick = this.game.add.audio("freaky");
             this.dick.loop = true;
-            this.dick.volume = 0.0;
+            this.dick.volume = 1;
 
             this.m1 = this.game.add.audio("herreguddritkult")
             this.m2 = this.game.add.audio('m2');

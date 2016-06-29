@@ -57,6 +57,7 @@ var load = {
 
 
         game.load.audio("dick", "assets/dick.mp3");
+        game.load.audio("freaky", "assets/freaky.mp3")
 
 	},
 
