@@ -35,7 +35,7 @@ var play_nico = {
         if (SOUND) {
             this.dick = this.game.add.audio("freaky");
             this.dick.loop = true;
-            this.dick.volume = 0.5;
+            this.dick.volume = 0.3;
 
             this.m1 = this.game.add.audio("herreguddritkult")
             this.m2 = this.game.add.audio('m2');
