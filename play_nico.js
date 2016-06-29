@@ -118,14 +118,14 @@ var play_nico = {
         game.physics.arcade.collide(this.player, this.polkagris, 0, this.restart, this);
         game.physics.arcade.collide(this.player, this.polkagris2, 0, this.restart, this);
 
-      if (this.sky.x < -1024) {
-        this.sky.x = 1024;
+      if (this.sky.x < -956) {
+        this.sky.x = 956;
         this.sky.x -= 0.4;
       } else {}
         this.sky.x -=0.4;
 
-      if (this.skymirror.x < -1024) {
-        this.skymirror.x = 1024;
+      if (this.skymirror.x < -956) {
+        this.skymirror.x = 956;
         this.skymirror.x -= 0.4;
       } else {}
         this.skymirror.x -=0.4;
