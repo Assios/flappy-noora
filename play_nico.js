@@ -1,7 +1,7 @@
-var play = {
+var play_nico = {
     create: function() {
-        this.sky = game.add.sprite(0, 0, 'sky');
-        this.skymirror = game.add.sprite(1024, 0, 'skymirror');
+        this.sky = game.add.sprite(0, 0, 'sky2');
+        this.skymirror = game.add.sprite(956, 0, 'skymirror2');
         this.sky.scale.y = 2.0;
         this.skymirror.scale.y = 2.0;
         //this.nisse = this.game.add.audio('nisse');
@@ -9,13 +9,13 @@ var play = {
         //this.nisse.play()
         this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         this.polkagris = game.add.group();
-        this.polkagris.createMultiple(5, 'polkagris');
+        this.polkagris.createMultiple(5, 'polkagris_2');
         this.polkagris.setAll('checkWorldBounds', true);
         this.polkagris.setAll('outOfBoundsKill', true);
         this.polkagris.enableBody = true;
         this.polkagris.scale.setTo(1.27, 1.27);
         this.polkagris2 = game.add.group();
-        this.polkagris2.createMultiple(5, 'polkagris2');
+        this.polkagris2.createMultiple(5, 'polkagris2_2');
         this.polkagris2.setAll('checkWorldBounds', true);
         this.polkagris2.setAll('outOfBoundsKill', true);
         this.polkagris2.enableBody = true;
@@ -35,7 +35,7 @@ var play = {
         if (SOUND) {
             this.dick = this.game.add.audio("dick");
             this.dick.loop = true;
-            this.dick.volume = 0.2;
+            this.dick.volume = 0.0;
 
             this.m1 = this.game.add.audio("herreguddritkult")
             this.m2 = this.game.add.audio('m2');
@@ -76,21 +76,25 @@ var play = {
 
         this.player.animations.play("start");        
 
-        this.scoretext = this.game.add.text(230, 20, "POENG: 0", {
+        this.scoretext = this.game.add.text(W/2, 20, "POENG: 0", {
             font: "35px Helvetica",
             fill: "#E4DF01",
             align: "center"
         });
 
-        this.besttext = this.game.add.text(210, 80, "REKORD: " + BEST, {
+        this.scoretext.anchor.setTo(0.5, 0);
+        this.scoretext.fontWeight = "bold";
+        this.scoretext.font = "Helvetica";
+
+        this.besttext = this.game.add.text(W/2, 80, "NICOREKORD: " + NICOBEST, {
             font: "35px Helvetica",
             fill: "#E4DF01",
             align: "center"
         });
-        this.scoretext.fontWeight = "bold";
-        this.scoretext.font = "Helvetica";
+
         this.besttext.fontWeight = "bold";
-        this.besttext.font = "Helvetica"
+        this.besttext.font = "Helvetica";
+        this.besttext.anchor.setTo(0.5, 0);
 
         this.player.body.setSize(32, 80, 25, 25);
         this.player.body.gravity.y = 1600;
@@ -130,6 +134,7 @@ var play = {
             this.player.animations.play("jump2");
         }
 
+
     },
     render: function() {
         game.debug.body(this.polkagris)
@@ -157,9 +162,9 @@ var play = {
 
         document.cookie = 'totalcookie='+TOTAL+'; expires=Fri, 1 Aug 2020 20:47:11 UTC; path=/';
 
-        if (this.score >= BEST) {
-            BEST = this.score;
-            document.cookie = 'bestcookie='+BEST+'; expires=Fri, 1 Aug 2020 20:47:11 UTC; path=/';
+        if (this.score >= NICOBEST) {
+            NICOBEST = this.score;
+            document.cookie = 'nicobest='+NICOBEST+'; expires=Fri, 1 Aug 2020 20:47:11 UTC; path=/';
         }
 
         LAST = this.score;
@@ -178,14 +183,22 @@ var play = {
         power.reset(W, -275 + random);
         power2.reset(W, 550 + random);
         power.body.velocity.x = -250;
-        power2.body.velocity.x = -250
+        power2.body.velocity.x = -250;
+
+        if ((Math.floor(Math.random() * 2) + 1) == 1)
+            rr = 45;
+        else
+            rr = -45;
+        power.body.velocity.y = rr;
+        power2.body.velocity.y = rr;
+
     },
     updateScore: function() {
         this.score += 1;
         this.scoretext.text = "POENG: " + this.score;
-        if (this.score > BEST)
-            BEST = this.score;
-        this.besttext.text = "REKORD: " + BEST;
+        if (this.score > NICOBEST)
+            NICOBEST = this.score;
+        this.besttext.text = "NICOREKORD: " + NICOBEST;
     },
     randomDeathSound: function() {
         switch(Math.floor((Math.random() * 4) + 1)) {
