@@ -136,6 +136,9 @@ var menu = {
     play_nico: function() {
         BEST = parseInt(this.readCookie("bestcookie"));
 
+        if (isNaN(BEST))
+            BEST = 0;
+
         if (BEST < 50) {
 
             if (this.notyet)
@@ -150,8 +153,9 @@ var menu = {
             this.notyet.font = "Helvetica";
             this.notyet.fontSize = "30px";
         }
-        else
+        else {
             this.game.state.start('play_nico');
+        }
     },
 
     play_next: function() {
