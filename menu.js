@@ -2,6 +2,7 @@ var menu = {
     preload: function() {
         //game.load.spritesheet('soundbtn', 'assets/soundbtn.png', 100, 100);
         game.load.spritesheet('playbtn', 'assets/play.png', 150, 150);
+        game.load.spritesheet('instagram', 'assets/instagram.png', 504, 504);
     },
 
     create: function() {
@@ -29,6 +30,18 @@ var menu = {
         this.hashtagtext.font = "Helvetica";
         this.hashtagtext.fontSize = "30px";
         this.hashtagtext.angle = "-30";
+
+        this.instagramtext = this.game.add.text(122, 351, "@flappynoora", {
+            fill: "#fff",
+            align: "center"
+        });
+
+        this.instagramtext.fontWeight = "bold";
+        this.instagramtext.font = "Helvetica";
+        this.instagramtext.fontSize = "30px";
+
+        this.instagram = game.add.sprite(80, 350, 'instagram');
+        this.instagram.scale.setTo(0.07, 0.07);
 
 
         this.playbtn = game.add.button(90, 690, 'playbtn', this.play_game, this, 0, 1);
