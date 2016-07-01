@@ -11,7 +11,6 @@ var load = {
             this.scale.pageAlignVertically = true;
             this.scale.setScreenSize(true);
 
-            //game.load.audio('nisse', 'assets/nissehistorie.mp3')
 	        game.stage.backgroundColor = '#ff0000';
 
             this.loadingtext = game.add.text(135, 200, "LASTER...", { font: "80px Arial", fill: "#E4DF01", align: "center" });
@@ -26,11 +25,11 @@ var load = {
             game.load.image('sky2', 'assets/club.jpg');
             game.load.image('skymirror2', 'assets/club_mirror.jpg');
 
-            game.load.image('polkagris', 'assets/william.png');
-            game.load.image('polkagris2', 'assets/william2.png');
+            game.load.image('william', 'assets/william.png');
+            game.load.image('william2', 'assets/william2.png');
 
-            game.load.image('polkagris_2', 'assets/nico.png');
-            game.load.image('polkagris2_2', 'assets/nico2.png');
+            game.load.image('nico', 'assets/nico.png');
+            game.load.image('nico2', 'assets/nico2.png');
 
             game.load.image('menu', 'assets/flappynoora.jpg');
             game.load.spritesheet('bird', 'assets/spritesheet.png', 72, 64);

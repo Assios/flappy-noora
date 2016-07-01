@@ -4,22 +4,19 @@ var play_nico = {
         this.skymirror = game.add.sprite(956, 0, 'skymirror2');
         this.sky.scale.y = 2.0;
         this.skymirror.scale.y = 2.0;
-        //this.nisse = this.game.add.audio('nisse');
-        //this.nisse.volume = 1.5;
-        //this.nisse.play()
         this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-        this.polkagris = game.add.group();
-        this.polkagris.createMultiple(5, 'polkagris_2');
-        this.polkagris.setAll('checkWorldBounds', true);
-        this.polkagris.setAll('outOfBoundsKill', true);
-        this.polkagris.enableBody = true;
-        this.polkagris.scale.setTo(1.27, 1.27);
-        this.polkagris2 = game.add.group();
-        this.polkagris2.createMultiple(5, 'polkagris2_2');
-        this.polkagris2.setAll('checkWorldBounds', true);
-        this.polkagris2.setAll('outOfBoundsKill', true);
-        this.polkagris2.enableBody = true;
-        this.polkagris2.scale.setTo(1.27, 1.27);
+        this.nico = game.add.group();
+        this.nico.createMultiple(5, 'nico');
+        this.nico.setAll('checkWorldBounds', true);
+        this.nico.setAll('outOfBoundsKill', true);
+        this.nico.enableBody = true;
+        this.nico.scale.setTo(1.27, 1.27);
+        this.nico2 = game.add.group();
+        this.nico2.createMultiple(5, 'nico2');
+        this.nico2.setAll('checkWorldBounds', true);
+        this.nico2.setAll('outOfBoundsKill', true);
+        this.nico2.enableBody = true;
+        this.nico2.scale.setTo(1.27, 1.27);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'bird');
         this.player.scale.setTo(2.3, 2.3);
@@ -27,8 +24,8 @@ var play_nico = {
         this.player.animations.add("start", [0], 1, false);
         this.player.animations.add("jump2", [2, 0, 1, 2, 0, 1, 2, 1, 0, 2, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 1, 0, 2, 1], 5, false);
         game.physics.arcade.enable(this.player);
-        game.physics.arcade.enable(this.polkagris);
-        game.physics.arcade.enable(this.polkagris2);
+        game.physics.arcade.enable(this.nico);
+        game.physics.arcade.enable(this.nico2);
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
@@ -109,26 +106,28 @@ var play_nico = {
             this.dick.play();
         }
 
+        this.backgroundSpeed = 0.4;
+
     },
     update: function() {
         if (this.player.angle < 20) this.player.angle += 1;
         game.input.onDown.add(this.jump, this);
         this.space.onDown.add(this.jump, this);
         if (this.player.inWorld == false) this.restart();
-        game.physics.arcade.collide(this.player, this.polkagris, 0, this.restart, this);
-        game.physics.arcade.collide(this.player, this.polkagris2, 0, this.restart, this);
+        game.physics.arcade.collide(this.player, this.nico, 0, this.restart, this);
+        game.physics.arcade.collide(this.player, this.nico2, 0, this.restart, this);
 
       if (this.sky.x < -956) {
         this.sky.x = 956;
-        this.sky.x -= 0.4;
+        this.sky.x -= this.backgroundSpeed;
       } else {}
-        this.sky.x -=0.4;
+        this.sky.x -= this.backgroundSpeed;
 
       if (this.skymirror.x < -956) {
         this.skymirror.x = 956;
-        this.skymirror.x -= 0.4;
+        this.skymirror.x -= this.backgroundSpeed;
       } else {}
-        this.skymirror.x -=0.4;
+        this.skymirror.x -= this.backgroundSpeed;
 
         if (this.score%50==0 && this.score != 0) {
             this.player.animations.play("jump2");
@@ -137,10 +136,11 @@ var play_nico = {
 
     },
     render: function() {
-        game.debug.body(this.polkagris)
+        game.debug.body(this.nico)
     },
     jump: function() {
-        //var change_expression = Math.floor(Math.random() * 20);
+
+        this.backgroundSpeed += 0.03;
 
         if (!this.score%50==0 || this.score==0) {
         this.player.animations.stop(null, true);
@@ -175,22 +175,22 @@ var play_nico = {
 
     },
     add_p: function() {
-        var power = this.polkagris.getFirstDead();
-        var power2 = this.polkagris2.getFirstDead();
-        power.body.setSize(169, 581, 50, 90);
-        power2.body.setSize(169, 581, 50, 40);
+        var obstacle = this.nico.getFirstDead();
+        var obstacle2 = this.nico2.getFirstDead();
+        obstacle.body.setSize(169, 581, 50, 90);
+        obstacle2.body.setSize(169, 581, 50, 40);
         var random = Math.floor(Math.random() * 400) - 200;
-        power.reset(W, -275 + random);
-        power2.reset(W, 550 + random);
-        power.body.velocity.x = -250;
-        power2.body.velocity.x = -250;
+        obstacle.reset(W, -275 + random);
+        obstacle2.reset(W, 550 + random);
+        obstacle.body.velocity.x = -250;
+        obstacle2.body.velocity.x = -250;
 
         if ((Math.floor(Math.random() * 2) + 1) == 1)
-            rr = 45;
+            obstacle_speed = 45;
         else
-            rr = -45;
-        power.body.velocity.y = rr;
-        power2.body.velocity.y = rr;
+            obstacle_speed = -45;
+        obstacle.body.velocity.y = obspacle_speed;
+        obstacle2.body.velocity.y = obstacle_speed;
 
     },
     updateScore: function() {

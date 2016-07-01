@@ -8,18 +8,18 @@ var play = {
         //this.nisse.volume = 1.5;
         //this.nisse.play()
         this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
-        this.polkagris = game.add.group();
-        this.polkagris.createMultiple(5, 'polkagris');
-        this.polkagris.setAll('checkWorldBounds', true);
-        this.polkagris.setAll('outOfBoundsKill', true);
-        this.polkagris.enableBody = true;
-        this.polkagris.scale.setTo(1.27, 1.27);
-        this.polkagris2 = game.add.group();
-        this.polkagris2.createMultiple(5, 'polkagris2');
-        this.polkagris2.setAll('checkWorldBounds', true);
-        this.polkagris2.setAll('outOfBoundsKill', true);
-        this.polkagris2.enableBody = true;
-        this.polkagris2.scale.setTo(1.27, 1.27);
+        this.william = game.add.group();
+        this.william.createMultiple(5, 'william');
+        this.william.setAll('checkWorldBounds', true);
+        this.william.setAll('outOfBoundsKill', true);
+        this.william.enableBody = true;
+        this.william.scale.setTo(1.27, 1.27);
+        this.william2 = game.add.group();
+        this.william2.createMultiple(5, 'william2');
+        this.william2.setAll('checkWorldBounds', true);
+        this.william2.setAll('outOfBoundsKill', true);
+        this.william2.enableBody = true;
+        this.william2.scale.setTo(1.27, 1.27);
         game.physics.startSystem(Phaser.Physics.ARCADE);
         this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'bird');
         this.player.scale.setTo(2.3, 2.3);
@@ -27,8 +27,8 @@ var play = {
         this.player.animations.add("start", [0], 1, false);
         this.player.animations.add("jump2", [2, 0, 1, 2, 0, 1, 2, 1, 0, 2, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 1, 0, 2, 1], 5, false);
         game.physics.arcade.enable(this.player);
-        game.physics.arcade.enable(this.polkagris);
-        game.physics.arcade.enable(this.polkagris2);
+        game.physics.arcade.enable(this.william);
+        game.physics.arcade.enable(this.william2);
         this.player.anchor.setTo(0.5, 0.5);
         this.score = 0;
 
@@ -105,26 +105,28 @@ var play = {
             this.dick.play();
         }
 
+        this.backgroundSpeed = 0.4;
+
     },
     update: function() {
         if (this.player.angle < 20) this.player.angle += 1;
         game.input.onDown.add(this.jump, this);
         this.space.onDown.add(this.jump, this);
         if (this.player.inWorld == false) this.restart();
-        game.physics.arcade.collide(this.player, this.polkagris, 0, this.restart, this);
-        game.physics.arcade.collide(this.player, this.polkagris2, 0, this.restart, this);
+        game.physics.arcade.collide(this.player, this.william, 0, this.restart, this);
+        game.physics.arcade.collide(this.player, this.william2, 0, this.restart, this);
 
       if (this.sky.x < -1024) {
         this.sky.x = 1024;
-        this.sky.x -= 0.4;
+        this.sky.x -= this.backgroundSpeed;
       } else {}
-        this.sky.x -=0.4;
+        this.sky.x -= this.backgroundSpeed;
 
       if (this.skymirror.x < -1024) {
         this.skymirror.x = 1024;
-        this.skymirror.x -= 0.4;
+        this.skymirror.x -= this.backgroundSpeed;
       } else {}
-        this.skymirror.x -=0.4;
+        this.skymirror.x -= this.backgroundSpeed;
 
         if (this.score%50==0 && this.score != 0) {
             this.player.animations.play("jump2");
@@ -132,10 +134,12 @@ var play = {
 
     },
     render: function() {
-        game.debug.body(this.polkagris)
+        game.debug.body(this.william)
     },
     jump: function() {
         //var change_expression = Math.floor(Math.random() * 20);
+
+        this.backgroundSpeed += 0.03;
 
         if (!this.score%50==0 || this.score==0) {
         this.player.animations.stop(null, true);
@@ -170,15 +174,15 @@ var play = {
 
     },
     add_p: function() {
-        var power = this.polkagris.getFirstDead();
-        var power2 = this.polkagris2.getFirstDead();
-        power.body.setSize(169, 581, 50, 90);
-        power2.body.setSize(169, 581, 50, 40);
+        var obstacle = this.william.getFirstDead();
+        var obstacle2 = this.william2.getFirstDead();
+        obstacle.body.setSize(169, 581, 50, 90);
+        obstacle2.body.setSize(169, 581, 50, 40);
         var random = Math.floor(Math.random() * 400) - 200;
-        power.reset(W, -275 + random);
-        power2.reset(W, 550 + random);
-        power.body.velocity.x = -250;
-        power2.body.velocity.x = -250
+        obstacle.reset(W, -275 + random);
+        obstacle2.reset(W, 550 + random);
+        obstacle.body.velocity.x = -250;
+        obstacle2.body.velocity.x = -250
     },
     updateScore: function() {
         this.score += 1;
