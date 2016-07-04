@@ -33,6 +33,7 @@ var load = {
 
             game.load.image('menu', 'assets/flappynoora.jpg');
             game.load.spritesheet('bird', 'assets/spritesheet.png', 72, 64);
+            game.load.spritesheet('sana', 'assets/spritesheet2.png', 72, 64);
 
         game.load.audio("herreguddritkult", "assets/quotes/herreguddritkult.mp3")
         game.load.audio("nooraokey", "assets/quotes/nooraokey.mp3")

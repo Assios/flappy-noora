@@ -2,6 +2,7 @@ var menu = {
     preload: function() {
         game.load.spritesheet('playbtn', 'assets/play.png', 150, 150);
         game.load.spritesheet('instagram', 'assets/instagram.png', 504, 504);
+        game.load.spritesheet('sanabakgrunn', 'assets/sanabakgrunn.jpg', 640, 320);            
     },
 
     create: function() {
@@ -42,6 +43,9 @@ var menu = {
         this.instagram = game.add.sprite(80, 350, 'instagram');
         this.instagram.scale.setTo(0.07, 0.07);
 
+        if (SANA) {
+            this.sanabakgrunn = game.add.sprite(0, 400, "sanabakgrunn");
+        }
 
         this.playbtn = game.add.button(90, 690, 'playbtn', this.play_game, this, 0, 1);
         this.playbtn.scale.setTo(0.80, 0.8);
@@ -183,8 +187,6 @@ var menu = {
         }
     },
 
-<<<<<<< HEAD
-=======
     play_next: function() {
 
             if (this.notyet)
@@ -201,7 +203,6 @@ var menu = {
         
     },
 
->>>>>>> nicomode
 	readCookie: function(name) {
 
 	    var nameEQ = name + "=";

@@ -18,11 +18,19 @@ var play_nico = {
         this.nico2.enableBody = true;
         this.nico2.scale.setTo(1.27, 1.27);
         game.physics.startSystem(Phaser.Physics.ARCADE);
-        this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'bird');
+
+        if (SANA) {
+            this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'sana');
+        } else {
+            this.player = this.game.add.sprite(W / 2, H / 2 - 100, 'bird');
+        }
+
         this.player.scale.setTo(2.3, 2.3);
         this.player.animations.add('jump1', [1, 0], 4, false);
         this.player.animations.add("start", [0], 1, false);
-        this.player.animations.add("jump2", [2, 0, 1, 2, 0, 1, 2, 1, 0, 2, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 1, 0, 2, 1], 5, false);
+        if (!SANA) {
+            this.player.animations.add("jump2", [2, 0, 1, 2, 0, 1, 2, 1, 0, 2, 1, 0, 2, 1, 2, 0, 2, 1, 0, 2, 1, 0, 2, 1], 5, false);
+        }
         game.physics.arcade.enable(this.player);
         game.physics.arcade.enable(this.nico);
         game.physics.arcade.enable(this.nico2);
@@ -129,7 +137,7 @@ var play_nico = {
       } else {}
         this.skymirror.x -= this.backgroundSpeed;
 
-        if (this.score%50==0 && this.score != 0) {
+        if (this.score%50==0 && this.score != 0 && !(SANA)) {
             this.player.animations.play("jump2");
         }
 
@@ -156,6 +164,21 @@ var play_nico = {
 
     },
     restart: function() {
+
+        if (this.score==1) {
+            SANACOUNT += 1;
+
+            if (SANACOUNT%3==0) {
+                if (SANA) {
+                    SANA = 0;
+                } else {
+                    SANA = 1;
+                }
+            }
+        } else {
+            SANACOUNT = 0;
+        }
+
         this.dick.stop();
 
         TOTAL += this.score;
@@ -189,7 +212,7 @@ var play_nico = {
             obstacle_speed = 45;
         else
             obstacle_speed = -45;
-        obstacle.body.velocity.y = obspacle_speed;
+        obstacle.body.velocity.y = obstacle_speed;
         obstacle2.body.velocity.y = obstacle_speed;
 
     },
